@@ -10,7 +10,6 @@
   --product-grid: 2.2fr 1fr 1.2fr 1fr;
 }
 
-/* 🔑 WICHTIG: Mobile Basisgröße */
 html {
   font-size: 22px;
 }
@@ -214,3 +213,4 @@ body {
     font-size: 23px;
   }
 }
+
