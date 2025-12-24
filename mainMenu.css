@@ -1,107 +1,95 @@
 /* =========================
-   GLOBAL
+   GLOBAL / RESET
 ========================= */
 :root {
   --bg-main: #d1d1d1;
   --bg-header: #a8a7a7;
   --bg-list: #ffffff;
-  --accent-budget: rgb(188, 151, 151);
+  --accent-budget: #cfa6a1;
 
-  --product-grid: 2.2fr 1fr 1.2fr 1fr;
+  /* Grid für Tabelle */
+  --product-grid: 1.6fr 0.8fr 1fr 0.8fr;
 }
 
-/* 🔑 WICHTIG: Mobile Basisgröße */
-html {
-  font-size: 22px;
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   background-color: var(--bg-main);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 /* =========================
    HEADER
 ========================= */
 .mainMenu-header {
-  padding: 28px 18px 22px;
+  padding: 16px 14px 14px;
   background-color: var(--bg-header);
-  border-bottom-left-radius: 26px;
-  border-bottom-right-radius: 26px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .header {
-  font-size: 2.8rem;
+  font-size: 2rem;            /* ca. 32px */
   text-align: center;
-  margin: 0.5rem 0 0;
+  margin: 0;
 }
 
 .budget {
-  font-weight: bold;
-  font-size: 1.6rem;
-  margin-top: 2.5rem;
-  border-bottom: 3px solid black;
+  margin-top: 18px;
+  font-size: 1.1rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 6px;
 }
 
 #budgetValue {
   background-color: var(--accent-budget);
-  padding: 10px 16px;       
-  border-radius: 12px;       
-  font-size: 1.4em;         
+  padding: 4px 8px;
+  border-radius: 6px;
   font-weight: 700;
-  display: inline-flex;      
-  align-items: center;
-  min-height: 44px;         
 }
 
+/* ✏️ Budget bearbeiten */
 .edit-budget {
-  width: 42px;
-  height: 42px;
-
-  font-size: 20px;           
-  background-color: #bfa2a2; 
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
   border: none;
-  border-radius: 10px;
-
+  background: #eee;
+  font-size: 18px;
   cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  box-shadow: 0 2px 5px rgba(0,0,0,0.25);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
 .edit-budget:hover {
-  background-color: #cbb0b0;
-  transform: scale(1.08);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  background: #ddd;
+  transform: scale(1.05);
 }
-
-.edit-budget:active {
-  transform: scale(1);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-
 
 /* =========================
    BODY
 ========================= */
 .mainMenu-body {
-  margin-top: 20px;
-  padding: 0 16px;
+  padding: 14px;
 }
 
 .product {
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 12px 0;
 }
 
 /* =========================
@@ -110,13 +98,14 @@ body {
 .table-header {
   display: grid;
   grid-template-columns: var(--product-grid);
-  padding: 10px 12px;
-  font-weight: bold;
-  font-size: 1.05rem;
-  opacity: 0.85;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0 6px;
+  margin-bottom: 6px;
 }
 
 .table-header p {
+  margin: 0;
   text-align: center;
 }
 
@@ -124,17 +113,13 @@ body {
   text-align: left;
 }
 
-.table-header p:last-child {
-  text-align: right;
-}
-
 /* =========================
    PRODUCT LIST
 ========================= */
 .product-list {
   background: var(--bg-list);
-  border-radius: 16px;
-  padding: 0 12px;
+  border-radius: 12px;
+  padding: 4px 6px;
 }
 
 /* =========================
@@ -144,9 +129,9 @@ body {
   display: grid;
   grid-template-columns: var(--product-grid);
   align-items: center;
-  padding: 18px 0;
+  padding: 10px 4px;
+  font-size: 0.95rem;
   border-bottom: 1px solid #eee;
-  font-size: 1.15rem;
 }
 
 .product-item:last-child {
@@ -158,49 +143,47 @@ body {
 }
 
 .product-amount {
-  justify-self: center;
-  color: #444;
+  text-align: center;
+  color: #555;
 }
 
 .product-price {
-  justify-self: center;
-  font-weight: 700;
+  text-align: center;
+  font-weight: 600;
 }
 
 /* =========================
-   ACTION BUTTONS
+   ACTIONS (EDIT / DELETE)
 ========================= */
 .product-actions {
-  justify-self: end;
   display: flex;
-  gap: 14px;
+  justify-content: flex-end;
+  gap: 6px;
 }
 
 .edit-product,
 .delete-product {
-  width: 48px;
-  height: 48px;
-  font-size: 22px;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
   border: none;
   background: transparent;
+  font-size: 16px;
   cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border-radius: 10px;
   transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
 .edit-product:hover {
-  background-color: rgba(255, 184, 75, 0.4);
-  transform: scale(1.1);
+  background-color: rgba(255, 184, 75, 0.3);
 }
 
 .delete-product:hover {
-  background-color: rgba(255, 75, 75, 0.4);
-  transform: scale(1.1);
+  background-color: rgba(255, 75, 75, 0.3);
 }
 
 /* =========================
@@ -208,26 +191,25 @@ body {
 ========================= */
 .product-buttons {
   display: flex;
-  gap: 18px;
-  margin: 24px 0;
+  gap: 12px;
+  margin-top: 16px;
 }
 
 .product-buttons button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
   border: none;
-  padding: 18px 26px;
-  border-radius: 16px;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
 
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 6px;
 
-  min-height: 52px;
-
-  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
 #add {
@@ -238,16 +220,15 @@ body {
   background-color: #ffb84b;
 }
 
-.product-buttons button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
-
 /* =========================
-   EXTRA KLEINE HANDYS
+   DESKTOP TWEAK (OPTIONAL)
 ========================= */
-@media (max-width: 360px) {
-  html {
-    font-size: 23px;
+@media (min-width: 768px) {
+  .header {
+    font-size: 2.4rem;
+  }
+
+  .product-item {
+    font-size: 1rem;
   }
 }
