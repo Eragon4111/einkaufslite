@@ -57,6 +57,37 @@ body {
   min-height: 44px;         
 }
 
+.edit-budget {
+  width: 42px;
+  height: 42px;
+
+  font-size: 20px;           
+  background-color: #bfa2a2; 
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.edit-budget:hover {
+  background-color: #cbb0b0;
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.edit-budget:active {
+  transform: scale(1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+
 /* =========================
    BODY
 ========================= */
@@ -218,5 +249,6 @@ body {
     font-size: 23px;
   }
 }
+
 
 
