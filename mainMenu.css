@@ -1,48 +1,41 @@
 /* =========================
-   GLOBAL / RESET
+   RESET & GLOBAL
 ========================= */
-:root {
-  --bg-main: #d1d1d1;
-  --bg-header: #a8a7a7;
-  --bg-list: #ffffff;
-  --accent-budget: #cfa6a1;
-
-  /* Grid für Tabelle */
-  --product-grid: 1.6fr 0.8fr 1fr 0.8fr;
-}
-
 * {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
-  background-color: var(--bg-main);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
-  line-height: 1.4;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #d1d1d1;
+  color: #000;
 }
 
 /* =========================
    HEADER
 ========================= */
 .mainMenu-header {
-  padding: 16px 14px 14px;
-  background-color: var(--bg-header);
+  background: #a8a7a7;
+  padding: 16px 12px 14px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
 .header {
-  font-size: 2rem;            /* ca. 32px */
+  font-size: 1.8rem;
   text-align: center;
   margin: 0;
 }
 
 .budget {
-  margin-top: 18px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -51,59 +44,48 @@ body {
 }
 
 #budgetValue {
-  background-color: var(--accent-budget);
+  background: rgb(188, 151, 151);
   padding: 6px 10px;
   border-radius: 8px;
-  font-weight: 700;
-
-  white-space: nowrap;   
+  font-weight: 800;
+  white-space: nowrap;
 }
-
 
 .edit-budget {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
   border: none;
-  background: #eee;
-  font-size: 18px;
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: transform 0.15s ease, background-color 0.15s ease;
-}
-
-.edit-budget:hover {
   background: #ddd;
-  transform: scale(1.05);
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 /* =========================
    BODY
 ========================= */
 .mainMenu-body {
-  padding: 14px;
+  padding: 12px;
 }
 
 .product {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin: 12px 0;
+  margin: 12px 0 6px;
 }
 
 /* =========================
    TABLE HEADER
 ========================= */
+:root {
+  --grid: 2fr 1fr 1fr auto;
+}
+
 .table-header {
   display: grid;
-  grid-template-columns: var(--product-grid);
-  font-size: 0.85rem;
-  font-weight: 600;
+  grid-template-columns: var(--grid);
+  font-size: 0.8rem;
+  font-weight: 700;
   padding: 0 6px;
-  margin-bottom: 6px;
 }
 
 .table-header p {
@@ -119,20 +101,18 @@ body {
    PRODUCT LIST
 ========================= */
 .product-list {
-  background: var(--bg-list);
+  background: #fff;
   border-radius: 12px;
-  padding: 4px 6px;
+  margin-top: 6px;
+  overflow: hidden;
 }
 
-/* =========================
-   PRODUCT ITEM
-========================= */
 .product-item {
   display: grid;
-  grid-template-columns: var(--product-grid);
+  grid-template-columns: var(--grid);
   align-items: center;
-  padding: 10px 4px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  padding: 10px 6px;
   border-bottom: 1px solid #eee;
 }
 
@@ -144,107 +124,43 @@ body {
   text-align: left;
 }
 
-.product-amount {
-  text-align: center;
-  color: #555;
-}
-
+.product-amount,
 .product-price {
   text-align: center;
   font-weight: 600;
 }
 
 /* =========================
-   ACTIONS (EDIT / DELETE)
+   ACTIONS
 ========================= */
 .product-actions {
   display: flex;
-  justify-content: flex-end;
   gap: 6px;
 }
 
 .edit-product,
 .delete-product {
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
   border: none;
-  background: transparent;
-  font-size: 16px;
+  background: #eee;
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 1rem;
   cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: background-color 0.15s ease, transform 0.15s ease;
-}
-
-.edit-product:hover {
-  background-color: rgba(255, 184, 75, 0.3);
-}
-
-.delete-product:hover {
-  background-color: rgba(255, 75, 75, 0.3);
 }
 
 /* =========================
-   BOTTOM BUTTONS
+   ADD BUTTON
 ========================= */
 .product-buttons {
-  display: flex;
-  gap: 12px;
   margin-top: 16px;
 }
 
-.product-buttons button {
-  flex: 1;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
-
 #add {
-  background-color: #6ddf6d;
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: none;
+  background: #6ddf6d;
+  font-weight: 700;
 }
-
-#change {
-  background-color: #ffb84b;
-}
-
-/* =========================
-   DESKTOP TWEAK (OPTIONAL)
-========================= */
-@media (max-width: 480px) {
-  .header {
-    font-size: 1.8rem;
-  }
-
-  .budget {
-    font-size: 1rem;
-    margin-top: 14px;
-  }
-
-  .mainMenu-header {
-    padding: 14px 12px 12px;
-  }
-
-  .product {
-    font-size: 1.1rem;
-  }
-
-  .product-item {
-    font-size: 0.9rem;
-  }
-}
-
