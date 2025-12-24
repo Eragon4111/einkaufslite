@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Einkaufsliste</title>
+    <link rel="stylesheet" href="mainMenu.css" />
+    <link rel="stylesheet" href="popUp.css" />
+    <link rel="stylesheet" href="createProduct.css" />
+  </head>
+  <body>
+    <!-- Popup für Budget Eingabe -->
+    <div class="popUp" id="setBudgetPopup">
+      <div class="popUp-content">
+        <h2>Herzlich willkommen!</h2>
+        <p>Bitte gib dein monatliches Budget ein:</p>
+        <input type="number" id="startBudget" placeholder="z. B. 200" />
+        <button id="saveBudget">Speichern</button>
+      </div>
+    </div>
+    <!-- Popup für Willkommen zurück -->
+    <div class="popUp" id="welcomePopup">
+      <div class="popUp-content">
+        <h2>Herzlich willkommen zurück!</h2>
+        <p>Ihr monatliches Budget beträgt noch:</p>
+        <h3 id="currentBudgetPopup"></h3>
+      </div>
+    </div>
+    <div class="mainMenu">
+      <div class="mainMenu-header">
+        <h2 class="header">Einkaufsliste</h2>
+        <h3 class="budget">
+          Budget: <span id="budgetValue">200 €</span>
+          <button id="editBudget" class="edit-budget" title="Budget bearbeiten">
+            ✏️
+          </button>
+        </h3>
+      </div>
+      <div class="mainMenu-body">
+        <p class="product">Produkte</p>
+        <div class="table-header">
+          <p>Name</p>
+          <p>Anzahl</p>
+          <p>Preis</p>
+          <p>Aktionen</p>
+        </div>
+        <div class="product-list">
+          <div class="product-item">
+            <div class="product-actions"></div>
+          </div>
+        </div>
+        <div class="product-buttons">
+          <button id="add"><span>➕</span> Hinzufügen</button>
+        </div>
+      </div>
+    </div>
+    <div class="CreateProdukt">
+      <div class="popUp" id="addProductPopup">
+        <div class="popUp-content product-popup">
+          <h2>Produkt hinzufügen</h2>
+          <label>Produktname:</label>
+          <input type="text" id="productName" placeholder="z. B. Milch" />
+          <label>Anzahl:</label>
+          <input type="number" id="productAmount" placeholder="z. B. 2" />
+          <label>Preis (€):</label>
+          <input
+            type="number"
+            id="productPrice"
+            placeholder="z. B. 3.00"
+            step="0.01"
+          />
+          <div class="product-popup-buttons">
+            <button id="saveProduct" class="btn-save">💾 Speichern</button>
+            <button id="cancelProduct" class="btn-cancel">✖ Abbrechen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

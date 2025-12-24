@@ -1,0 +1,69 @@
+#addProductPopup {
+  display: none; /* zuerst ausblenden */
+}
+
+.product-popup {
+  width: 90%;
+  max-width: 400px;
+}
+
+.product-popup input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin: 8px 0 16px 0;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+}
+
+.product-popup-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn-save,
+.btn-cancel {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+  transition: 0.2s ease;
+}
+
+.btn-save {
+  background: linear-gradient(145deg, #7ff67f, #55c955);
+  color: #083708;
+}
+
+.btn-cancel {
+  background: linear-gradient(145deg, #ff5e5e, #d12f2f);
+  color: #3d0000;
+}
+
+.btn-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+.btn-cancel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+.btn-save:active,
+.btn-cancel:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
