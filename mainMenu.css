@@ -48,8 +48,13 @@ body {
 
 #budgetValue {
   background-color: var(--accent-budget);
-  padding: 6px 10px;
-  border-radius: 8px;
+  padding: 10px 16px;       
+  border-radius: 12px;       
+  font-size: 1.4em;         
+  font-weight: 700;
+  display: inline-flex;      
+  align-items: center;
+  min-height: 44px;         
 }
 
 /* =========================
@@ -213,4 +218,5 @@ body {
     font-size: 23px;
   }
 }
+
 
